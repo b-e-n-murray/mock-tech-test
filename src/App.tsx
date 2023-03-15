@@ -5,7 +5,7 @@ function App(): JSX.Element {
     <>
       <Characters />
     </>
-  )
+  );
 }
 
 export default App;
