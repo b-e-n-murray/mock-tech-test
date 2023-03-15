@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface CharData {
   id: string;
@@ -9,6 +9,11 @@ interface CharData {
 function Characters(): JSX.Element {
   const [characters, setCharacters] = useState<CharData[]>([]);
   const [serverError, setServerError] = useState(false);
+
+  useEffect(() => {
+    fetchAndStoreHPData();
+  }, []);
+
   async function fetchAndStoreHPData() {
     try {
       const HPCharData = await axios.get(
