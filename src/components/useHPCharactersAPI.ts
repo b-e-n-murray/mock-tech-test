@@ -6,7 +6,11 @@ interface CharData {
   name: string;
 }
 
-export function useHPCharactersAPI(): [() => Promise<void>, CharData[], boolean] {
+export function useHPCharactersAPI(): [
+  () => Promise<void>,
+  CharData[],
+  boolean
+] {
   const [characters, setCharacters] = useState<CharData[]>([]);
   const [serverError, setServerError] = useState(false);
 
